@@ -8,9 +8,9 @@ import { SiSolidity, SiTypescript, SiPostgresql, SiMongodb } from "react-icons/s
 import { TbBrandNextjs } from "react-icons/tb"
 import { Badge } from "@/components/ui/badge"
 import { Card, CardContent } from "@/components/ui/card"
-import { QuantumWaveCard } from "@/components/ui/quantum-wave-card"
 import { PhysicsParticleSimulation } from "@/components/ui/physics-particle-simulation"
 import { ClientOnly } from "@/components/ui/client-only"
+import { SmoothGradientCard } from "@/components/ui/smooth-gradient-card"
 
 export function SkillsSection() {
   const [ref, inView] = useInView({
@@ -61,14 +61,8 @@ export function SkillsSection() {
 
           <motion.div variants={itemVariants} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 py-10">
             {skills.map((item, idx) => (
-              <Link
-                key={idx}
-                href={item.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="relative mx-auto flex h-[13rem] w-full max-w-full flex-col items-start gradient-border glass-card p-4"
-              >
-                <QuantumWaveCard text={item.title} icon={item.icon} />
+              <Link key={idx} href={item.link} target="_blank" rel="noopener noreferrer" className="h-[13rem]">
+                <SmoothGradientCard text={item.title} icon={item.icon} />
               </Link>
             ))}
           </motion.div>

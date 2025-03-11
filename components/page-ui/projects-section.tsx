@@ -3,9 +3,9 @@
 import { motion } from "framer-motion"
 import { useInView } from "react-intersection-observer"
 import { Badge } from "@/components/ui/badge"
-import { CosmicProjectGallery } from "@/components/ui/cosmic-project-gallery"
 import { FloatingEquations } from "@/components/ui/floating-equations"
 import { ClientOnly } from "@/components/ui/client-only"
+import { ProjectCarousel } from "@/components/ui/project-carousel"
 
 export function ProjectsSection() {
   const [ref, inView] = useInView({
@@ -62,7 +62,7 @@ export function ProjectsSection() {
         </motion.div>
       </div>
 
-      <CosmicProjectGallery projects={projects} />
+      <ProjectCarousel projects={projects} />
     </section>
   )
 }

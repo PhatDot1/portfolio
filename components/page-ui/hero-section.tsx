@@ -28,7 +28,7 @@ export function HeroSection() {
       text: "&",
     },
     {
-      text: "Blockchain",
+      text: "Operations",
     },
     {
       text: "Specialist",
