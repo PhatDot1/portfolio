@@ -70,65 +70,65 @@ export function ProjectsSection() {
 const projects = [
   {
     title: "Multi-Pool Liquidity Swap",
-    link: "https://github.com/",
+    link: "https://github.com/PhatDot1/PPshift",
     thumbnail: "/placeholder.svg?height=600&width=600",
     description:
       "A DeFi protocol that optimizes token swaps across multiple liquidity pools, improving efficiency and reducing slippage.",
   },
   {
     title: "NFT Marketplace with Dynamic Metadata",
-    link: "https://github.com/",
+    link: "https://github.com/PhatDot1/BetNFT",
     thumbnail: "/placeholder.svg?height=600&width=600",
     description: "A marketplace for NFTs with metadata that can evolve based on external triggers and on-chain events.",
   },
   {
-    title: "Blockchain Data Visualization",
-    link: "https://github.com/",
+    title: "On-Chain NFT Chatbot Agent",
+    link: "https://github.com/PhatDot1/crossmint_agent",
     thumbnail: "/placeholder.svg?height=600&width=600",
     description:
-      "A 3D visualization tool for blockchain data that helps identify patterns and anomalies in transaction networks.",
+      "Engineered an on-chain chatbot agent with LangChain and Crossmint to enable NFT creation, listing, and token transfers via natural language.",
   },
   {
-    title: "Smart Contract Verification Tool",
-    link: "https://github.com/",
+    title: "Controversial Tweet Scraper",
+    link: "https://github.com/PhatDot1/FileFind",
     thumbnail: "/placeholder.svg?height=600&width=600",
     description:
-      "A framework for testing and verifying smart contracts before deployment, reducing vulnerabilities and gas costs.",
+      "Implemented a Selenium-based tweet scraper for analyzing controversial Twitter content with advanced query and authentication features.",
   },
   {
-    title: "Event-Triggered NFT System",
-    link: "https://github.com/",
+    title: "Secondary ERC-20 Marketplace",
+    link: "https://github.com/PhatDot1/footium-secondary-mint-market",
     thumbnail: "/placeholder.svg?height=600&width=600",
     description:
-      "NFTs that transform based on real-world events, using oracle systems to determine visual and functional changes.",
+      "Built an app enabling users to mint NFTs via third-party signatures, bypassing direct mint authority, with an optional premium minting service. V2 Pending.",
   },
   {
-    title: "Secure Random Number Generator",
+    title: "Quantum Random Number-Based Picture Poker Game",
     link: "https://github.com/",
     thumbnail: "/placeholder.svg?height=600&width=600",
     description:
-      "A cryptographically secure random number generator for blockchain applications with verifiable entropy sources.",
+      "Built a poker game using quantum random number generation (QRNG) integrated with Ethereum smart contracts.",
   },
   {
-    title: "Physics Simulation Platform",
+    title: "AI-Powered SPL Token Minter",
     link: "https://github.com/",
     thumbnail: "/placeholder.svg?height=600&width=600",
     description:
-      "An educational web platform that simulates physical systems with interactive parameters and visualizations.",
+      "Designed a simple app allowing users to input prompts to generate custom designs and mint them seamlessly.",
   },
   {
-    title: "Quantum Spin Chain Simulator",
-    link: "https://github.com/",
+    title: "Semantic Word Guessing Game",
+    link: "https://github.com/PhatDot1/PPmantle",
     thumbnail: "/placeholder.svg?height=600&width=600",
     description:
-      "A computational model for simulating quantum spin chains, developed during my studies at Lancaster University.",
+      "A daily word guessing game where players receive exciting visual feedback and numerical indicators of semantic closeness.",
   },
   {
-    title: "Gravitational Simulation Tool",
-    link: "https://github.com/",
+    title: "NFT Minters",
+    link: "https://github.com/PhatDot1/minting-scripts-archive",
     thumbnail: "/placeholder.svg?height=600&width=600",
     description:
-      "A visualization tool for gravitational interactions, including orbital mechanics and relativistic effects.",
+      "NFT Contracts and Scripts for database integrated NFT Minting on Solana, EVM, and more. ",
   },
 ]
 
