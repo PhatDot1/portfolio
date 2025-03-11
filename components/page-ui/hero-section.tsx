@@ -84,7 +84,7 @@ export function HeroSection() {
             transition={{ delay: 0.6, duration: 0.7 }}
             className="text-muted-foreground max-w-2xl mx-auto mt-6 text-lg"
           >
-            Specializing in blockchain technology, smart contracts, and AI integration. Building innovative solutions
+            Specializing in web3 technology, smart contracts, AI integration, APIs, and scripting. Building innovative solutions
             with a strong mathematical foundation.
           </motion.p>
         </motion.div>

@@ -148,7 +148,7 @@ export function ContactSection() {
                   <h3 className="text-xl font-bold mb-6 text-blue-400">Connect</h3>
                   <div className="flex space-x-4">
                     <a
-                      href="https://github.com/"
+                      href="https://github.com/PhatDot1"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="p-3 rounded-full bg-blue-500/10 hover:bg-blue-500/20 text-blue-400 transition-colors"
@@ -157,7 +157,7 @@ export function ContactSection() {
                       <Github className="h-5 w-5" />
                     </a>
                     <a
-                      href="https://linkedin.com/"
+                      href="https://www.linkedin.com/in/patrick-loughran-8b033b238/"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="p-3 rounded-full bg-blue-500/10 hover:bg-blue-500/20 text-blue-400 transition-colors"

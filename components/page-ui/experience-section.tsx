@@ -59,16 +59,13 @@ export function ExperienceSection() {
       ],
     },
     {
-      title: "Systems Engineer",
-      company: "Encode Club Education LTD",
+      title: "Mathematics Tutor & Research",
+      company: "Imperial College London",
       period: "Nov 2019 - Aug 2022",
       responsibilities: [
-        "NFT Minter Development: Created Solana and Polygon NFT minters with database integration, automating NFT issuance to programme graduates and participants.",
-        "Secure Smart Contracts: Developed deposit smart contracts with robust validation mechanisms for seamless financial transactions.",
-        "Custom Database Tools: Designed a backend-powered email extension with tracking, unsubscribe links, and error minimization to enhance compliance and flexibility.",
-        "Web Development: Created secure web pages and user preference management systems to support the developer community.",
-        "REST API Development: Built and integrated APIs for seamless service communication and data exchange.",
-        "LangChain & On-Chain AI: Built Airtable agents with LangChain for record automation and dynamic content, integrating Crossmint for enhanced blockchain interactions.",
+        "Workshop Hosting: Conducted workshops on advanced mathematical concepts, providing hands-on problem-solving sessions and fostering collaborative learning.",
+        "Learning Material Creation: Developed engaging classes and worksheets for University Mathematics.",
+        "Investigating String Theory Phenomenon: Analyzing how Lower-Dimensional Effective Theories Arise from Higher-Dimensional Frameworks and Exploring Invariant Structures Governing Fundamental Interactions.",
       ],
     },
   ]

@@ -87,7 +87,7 @@ export function Navbar() {
                 CV
               </Button>
             </Link>
-            <Link href="https://github.com/" target="_blank" rel="noopener noreferrer">
+            <Link href="https://github.com/PhatDot1" target="_blank" rel="noopener noreferrer">
               <Button
                 variant="ghost"
                 size="icon"
@@ -97,7 +97,7 @@ export function Navbar() {
                 <Github className="h-5 w-5" />
               </Button>
             </Link>
-            <Link href="https://linkedin.com/" target="_blank" rel="noopener noreferrer">
+            <Link href="https://www.linkedin.com/in/patrick-loughran-8b033b238/" target="_blank" rel="noopener noreferrer">
               <Button
                 variant="ghost"
                 size="icon"
@@ -161,7 +161,7 @@ export function Navbar() {
                 </Link>
               </div>
               <div className="flex items-center space-x-4 py-2">
-                <Link href="https://github.com/" target="_blank" rel="noopener noreferrer">
+                <Link href="https://github.com/PhatDot1" target="_blank" rel="noopener noreferrer">
                   <Button
                     variant="ghost"
                     size="icon"
@@ -171,7 +171,7 @@ export function Navbar() {
                     <Github className="h-5 w-5" />
                   </Button>
                 </Link>
-                <Link href="https://linkedin.com/" target="_blank" rel="noopener noreferrer">
+                <Link href="https://www.linkedin.com/in/patrick-loughran-8b033b238/" target="_blank" rel="noopener noreferrer">
                   <Button
                     variant="ghost"
                     size="icon"

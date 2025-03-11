@@ -39,7 +39,7 @@ export function Footer() {
 
           <div className="flex items-center space-x-4 mt-6 md:mt-0">
             <Link
-              href="https://github.com/"
+              href="https://github.com/PhatDot1"
               target="_blank"
               rel="noopener noreferrer"
               className="text-muted-foreground hover:text-blue-400 transition-colors"
@@ -48,7 +48,7 @@ export function Footer() {
               <Github className="h-5 w-5" />
             </Link>
             <Link
-              href="https://linkedin.com/"
+              href="https://www.linkedin.com/in/patrick-loughran-8b033b238/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-muted-foreground hover:text-blue-400 transition-colors"

@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://patrickloughran.com"),
   title: "Patrick Loughran | Systems Engineer & Blockchain Specialist",
   description:
-    "Professional portfolio of Patrick Loughran - Systems Engineer specializing in blockchain technology, smart contracts, and AI integration.",
+    "Professional portfolio of Patrick Loughran - Systems Engineer specializing in blockchain technology, smart contracts, AI integration, APIs, and scripting.",
   applicationName: "Patrick Loughran Portfolio",
   keywords: [
     "Patrick Loughran",
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     siteName: "Patrick Loughran",
     title: "Patrick Loughran | Systems Engineer & Blockchain Specialist",
     description:
-      "Professional portfolio of Patrick Loughran - Systems Engineer specializing in blockchain technology, smart contracts, and AI integration.",
+      "Professional portfolio of Patrick Loughran - Systems Engineer specializing in blockchain technology, smart contracts, AI integration, APIs, and scripting.",
     type: "website",
     images: ["/opengraph-image.png"],
   },
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     site: "@patrickloughran",
     title: "Patrick Loughran | Systems Engineer & Blockchain Specialist",
     description:
-      "Professional portfolio of Patrick Loughran - Systems Engineer specializing in blockchain technology, smart contracts, and AI integration.",
+      "Professional portfolio of Patrick Loughran - Systems Engineer specializing in blockchain technology, smart contracts, AI integration, APIs, and scripting.",
     images: ["/opengraph-image.png"],
   },
   icons: [

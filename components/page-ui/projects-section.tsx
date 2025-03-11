@@ -56,7 +56,7 @@ export function ProjectsSection() {
             <h2 className="text-3xl md:text-5xl font-bold mb-4 text-gradient">Featured Work</h2>
             <div className="h-1 w-20 bg-blue-500 mx-auto rounded-full"></div>
             <p className="mt-6 text-muted-foreground max-w-2xl mx-auto">
-              A collection of development projects and technical explorations that showcase my skills and interests
+              A collection of past and current development projects and technical explorations that showcase my skills and interests
             </p>
           </motion.div>
         </motion.div>

@@ -4,7 +4,7 @@ import { motion } from "framer-motion"
 import { useInView } from "react-intersection-observer"
 import Link from "next/link"
 import { FaPython, FaReact, FaNodeJs, FaEthereum } from "react-icons/fa"
-import { SiSolidity, SiTypescript, SiPostgresql, SiMongodb } from "react-icons/si"
+import { SiSolidity, SiTypescript, SiPostgresql, SiChainlink } from "react-icons/si"
 import { TbBrandNextjs } from "react-icons/tb"
 import { Badge } from "@/components/ui/badge"
 import { Card, CardContent } from "@/components/ui/card"
@@ -80,9 +80,36 @@ export function SkillsSection() {
                       <li className="flex items-center">
                         <span className="mr-3 text-blue-400 flex-shrink-0">•</span>
                         <div>
+                          <p className="font-medium">Blockchain & Smart Contracts Development</p>
+                          <p className="text-sm text-muted-foreground mt-1">
+                          Developed secure deposit smart contracts, NFT minters, and multi-liquidity swap platforms
+                          </p>
+                        </div>
+                      </li>
+                      <li className="flex items-center">
+                        <span className="mr-3 text-blue-400 flex-shrink-0">•</span>
+                        <div>
+                          <p className="font-medium">Infrastructure Enginnering</p>
+                          <p className="text-sm text-muted-foreground mt-1">
+                            Set up RPC nodes and validators on Ethereum Holesky
+                          </p>
+                        </div>
+                      </li>
+                      <li className="flex items-center">
+                        <span className="mr-3 text-blue-400 flex-shrink-0">•</span>
+                        <div>
                           <p className="font-medium">REST API Development & Integration</p>
                           <p className="text-sm text-muted-foreground mt-1">
                             Building robust APIs with authentication and validation
+                          </p>
+                        </div>
+                      </li>
+                      <li className="flex items-center">
+                        <span className="mr-3 text-blue-400 flex-shrink-0">•</span>
+                        <div>
+                          <p className="font-medium">LangChain & Agentic AI</p>
+                          <p className="text-sm text-muted-foreground mt-1">
+                            Building AI-powered applications with natural language processing
                           </p>
                         </div>
                       </li>
@@ -95,38 +122,34 @@ export function SkillsSection() {
                           </p>
                         </div>
                       </li>
-                      <li className="flex items-center">
-                        <span className="mr-3 text-blue-400 flex-shrink-0">•</span>
-                        <div>
-                          <p className="font-medium">Data Manipulation</p>
-                          <p className="text-sm text-muted-foreground mt-1">
-                            Expertise with Numpy, Pandas, and data visualization tools
-                          </p>
-                        </div>
-                      </li>
-                      <li className="flex items-center">
-                        <span className="mr-3 text-blue-400 flex-shrink-0">•</span>
-                        <div>
-                          <p className="font-medium">LangChain & AI Integration</p>
-                          <p className="text-sm text-muted-foreground mt-1">
-                            Building AI-powered applications with natural language processing
-                          </p>
-                        </div>
-                      </li>
                     </ul>
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold mb-6 text-blue-400">Cloud & DevOps</h3>
+                    <h3 className="text-xl font-bold mb-6 text-blue-400">Software & Cloud</h3>
                     <div className="grid grid-cols-2 gap-4">
                       <div className="p-4 rounded-lg glass-card glass-card-hover">
-                        <p className="font-medium">Google Cloud Platform</p>
+                        <p className="font-medium">GCP & AWS</p>
                         <div className="flex items-center mt-2">
                           <div className="h-2 bg-blue-400 rounded-full w-4/5"></div>
                           <span className="ml-2 text-xs text-muted-foreground">80%</span>
                         </div>
                       </div>
                       <div className="p-4 rounded-lg glass-card glass-card-hover">
-                        <p className="font-medium">DigitalOcean</p>
+                        <p className="font-medium">DigitalOcean & Docker</p>
+                        <div className="flex items-center mt-2">
+                          <div className="h-2 bg-blue-400 rounded-full w-11/12"></div>
+                          <span className="ml-2 text-xs text-muted-foreground">80%</span>
+                        </div>
+                      </div>
+                      <div className="p-4 rounded-lg glass-card glass-card-hover">
+                        <p className="font-medium">Ethers.js & Crossmint</p>
+                        <div className="flex items-center mt-2">
+                          <div className="h-2 bg-blue-400 rounded-full w-11/12"></div>
+                          <span className="ml-2 text-xs text-muted-foreground">90%</span>
+                        </div>
+                      </div>
+                      <div className="p-4 rounded-lg glass-card glass-card-hover">
+                        <p className="font-medium">Hardhat</p>
                         <div className="flex items-center mt-2">
                           <div className="h-2 bg-blue-400 rounded-full w-11/12"></div>
                           <span className="ml-2 text-xs text-muted-foreground">90%</span>
@@ -143,7 +166,7 @@ export function SkillsSection() {
                         <p className="font-medium">GitHub & CI/CD</p>
                         <div className="flex items-center mt-2">
                           <div className="h-2 bg-blue-400 rounded-full w-4/5"></div>
-                          <span className="ml-2 text-xs text-muted-foreground">85%</span>
+                          <span className="ml-2 text-xs text-muted-foreground">95%</span>
                         </div>
                       </div>
                     </div>
@@ -195,9 +218,9 @@ const skills = [
     icon: <SiPostgresql size={24} />,
   },
   {
-    title: "MongoDB",
-    link: "https://www.mongodb.com/",
-    icon: <SiMongodb size={24} />,
+    title: "Langchain",
+    link: "https://www.langchain.com/",
+    icon: <SiChainlink size={24} />,
   },
   {
     title: "EVM",

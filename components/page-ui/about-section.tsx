@@ -4,7 +4,7 @@ import { motion } from "framer-motion"
 import { useInView } from "react-intersection-observer"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Cpu, Database, Code, Braces, Network, Layers } from "lucide-react"
+import { Cpu, BrainCircuit, Code, Braces, Network, Layers } from "lucide-react"
 import { VibratingStrings } from "@/components/ui/vibrating-strings"
 import { ClientOnly } from "@/components/ui/client-only"
 
@@ -61,7 +61,7 @@ export function AboutSection() {
 
           <motion.div variants={itemVariants} className="mb-12">
             <p className="text-lg leading-relaxed mb-6">
-              I'm a Systems Engineer with expertise in blockchain technology, smart contracts, and AI integration. With
+              I am a Systems Engineer with expertise in web3 technology, smart contracts, and agentic AI. With
               a strong foundation in theoretical physics and mathematics from Imperial College London and Lancaster
               University, I bring a unique analytical perspective to technical challenges.
             </p>
@@ -86,7 +86,7 @@ export function AboutSection() {
                       <div>
                         <span className="font-medium">Blockchain Development</span>
                         <p className="text-muted-foreground mt-1">
-                          Building secure smart contracts and NFT solutions on Ethereum, Solana, and Polygon
+                          Building secure smart contracts and NFT solutions on Arbitrum, Solana, and Polygon.
                         </p>
                       </div>
                     </li>
@@ -95,7 +95,7 @@ export function AboutSection() {
                       <div>
                         <span className="font-medium">AI Integration</span>
                         <p className="text-muted-foreground mt-1">
-                          Implementing LangChain for record automation and dynamic content generation
+                          Implementing AI agents for operational workflows and content generation.
                         </p>
                       </div>
                     </li>
@@ -104,7 +104,7 @@ export function AboutSection() {
                       <div>
                         <span className="font-medium">System Architecture</span>
                         <p className="text-muted-foreground mt-1">
-                          Designing robust systems with database integration and API development
+                          Designing robust systems with database integration and API development.
                         </p>
                       </div>
                     </li>
@@ -122,8 +122,8 @@ export function AboutSection() {
                       <span>Smart Contracts</span>
                     </div>
                     <div className="flex items-center p-3 rounded-lg glass-card glass-card-hover">
-                      <Database className="h-5 w-5 mr-2 text-blue-400" />
-                      <span>Database Design</span>
+                      <BrainCircuit className="h-5 w-5 mr-2 text-blue-400" />
+                      <span>AI Agents</span>
                     </div>
                     <div className="flex items-center p-3 rounded-lg glass-card glass-card-hover">
                       <Network className="h-5 w-5 mr-2 text-blue-400" />
@@ -138,19 +138,19 @@ export function AboutSection() {
                   <h3 className="text-xl font-semibold mt-8 mb-4">Research Interests</h3>
                   <div className="flex flex-wrap gap-2">
                     <Badge className="bg-blue-500/10 text-blue-400 hover:bg-blue-500/20 border-blue-500/20">
-                      Quantum Computing
-                    </Badge>
-                    <Badge className="bg-blue-500/10 text-blue-400 hover:bg-blue-500/20 border-blue-500/20">
-                      Mathematical Modeling
+                      Agentic AI
                     </Badge>
                     <Badge className="bg-blue-500/10 text-blue-400 hover:bg-blue-500/20 border-blue-500/20">
                       Blockchain Technology
                     </Badge>
                     <Badge className="bg-blue-500/10 text-blue-400 hover:bg-blue-500/20 border-blue-500/20">
-                      AI Research
+                      Quantum Computing
                     </Badge>
                     <Badge className="bg-blue-500/10 text-blue-400 hover:bg-blue-500/20 border-blue-500/20">
-                      Physics Simulations
+                      Machine Learning
+                    </Badge>
+                    <Badge className="bg-blue-500/10 text-blue-400 hover:bg-blue-500/20 border-blue-500/20">
+                      Theoretical Physics
                     </Badge>
                   </div>
                 </div>
