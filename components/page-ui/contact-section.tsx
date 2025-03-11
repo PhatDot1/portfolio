@@ -110,7 +110,7 @@ export function ContactSection() {
                       </div>
                       <div>
                         <p className="font-medium">Location</p>
-                        <p className="text-muted-foreground mt-1">50 Corney Road, London, W4 2RA</p>
+                        <p className="text-muted-foreground mt-1">London, E14 9YF</p>
                       </div>
                     </div>
 
