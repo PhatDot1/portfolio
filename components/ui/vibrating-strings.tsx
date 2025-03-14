@@ -1,14 +1,23 @@
 "use client"
 
-import { useRef, useEffect } from "react"
+import { useRef, useEffect, useState } from "react"
 
 export function VibratingStrings({ className, density = 1 }: { className?: string; density?: number }) {
+  // Track mounting to ensure client-only random generation
+  const [mounted, setMounted] = useState(false)
   const canvasRef = useRef<HTMLCanvasElement>(null)
   const containerRef = useRef<HTMLDivElement>(null)
   const animationFrameRef = useRef<number>(0)
   const timeRef = useRef(0)
 
+  // Mark as mounted (client-side only)
   useEffect(() => {
+    setMounted(true)
+  }, [])
+
+  useEffect(() => {
+    if (!mounted) return  // Do nothing until mounted
+
     const canvas = canvasRef.current
     const container = containerRef.current
     if (!canvas || !container) return
@@ -22,7 +31,16 @@ export function VibratingStrings({ className, density = 1 }: { className?: strin
       canvas.height = height
     }
 
-    // Initialize strings
+    resizeCanvas()
+    window.addEventListener("resize", resizeCanvas)
+
+    // Use the container dimensions for proper full-section distribution
+    const { width: cWidth, height: cHeight } = container.getBoundingClientRect()
+
+    // Scaling multiplier to make strings larger
+    const sizeMultiplier = 2
+
+    // Arrays to hold string definitions
     const openStrings: {
       x: number
       y: number
@@ -39,27 +57,24 @@ export function VibratingStrings({ className, density = 1 }: { className?: strin
       color: string
     }[] = []
 
-    // Create open strings with proper mode expansions
-    // Adjust count based on density parameter
+    // Create open strings spread across the full container
     const openStringCount = Math.floor(12 * density)
     for (let i = 0; i < openStringCount; i++) {
-      const x = Math.random() * canvas.width
-      const y = Math.random() * canvas.height
-      const length = (Math.random() * 120 + 80) * 6
+      const x = Math.random() * cWidth
+      const y = Math.random() * cHeight
+      const length = (Math.random() * 120 + 80) * sizeMultiplier
 
-      // Create multiple vibrational modes (n=1,2,3...)
       const modes = []
       const modeCount = Math.floor(Math.random() * 3) + 2 // 2-4 modes
-
       for (let n = 1; n <= modeCount; n++) {
         modes.push({
           n,
-          amplitude: (Math.random() * 10 + 5) / (n * 1.5), // Higher modes have smaller amplitudes
+          amplitude: ((Math.random() * 10 + 5) / (n * 1.5)) * sizeMultiplier,
           phase: Math.random() * Math.PI * 2,
         })
       }
 
-      // Blue to purple color palette for strings
+      // Blue-to-purple color palette
       const hue = 220 + Math.random() * 60
       const saturation = 70 + Math.random() * 30
       const lightness = 50 + Math.random() * 20
@@ -68,27 +83,23 @@ export function VibratingStrings({ className, density = 1 }: { className?: strin
       openStrings.push({ x, y, length, modes, color })
     }
 
-    // Create closed strings (loops) with proper mode expansions
-    // Adjust count based on density parameter
+    // Create closed strings (loops) spread across the full container
     const closedStringCount = Math.floor(8 * density)
     for (let i = 0; i < closedStringCount; i++) {
-      const x = Math.random() * canvas.width
-      const y = Math.random() * canvas.height
-      const radius = (Math.random() * 40 + 30) * 6
+      const x = Math.random() * cWidth
+      const y = Math.random() * cHeight
+      const radius = (Math.random() * 40 + 30) * sizeMultiplier
 
-      // Create multiple vibrational modes
       const modes = []
       const modeCount = Math.floor(Math.random() * 3) + 2 // 2-4 modes
-
       for (let n = 1; n <= modeCount; n++) {
         modes.push({
           n,
-          amplitude: (Math.random() * 8 + 4) / (n * 1.2), // Higher modes have smaller amplitudes
+          amplitude: ((Math.random() * 8 + 4) / (n * 1.2)) * sizeMultiplier,
           phase: Math.random() * Math.PI * 2,
         })
       }
 
-      // Slightly different color for closed strings
       const hue = 180 + Math.random() * 100
       const saturation = 70 + Math.random() * 30
       const lightness = 50 + Math.random() * 20
@@ -98,20 +109,13 @@ export function VibratingStrings({ className, density = 1 }: { className?: strin
     }
 
     const drawStrings = () => {
-      if (!ctx || !canvas) return
-
-      // Clear canvas
       ctx.clearRect(0, 0, canvas.width, canvas.height)
-
-      // Increment time
       timeRef.current += 0.02
 
-      // Draw open strings with proper mode expansions
       openStrings.forEach((string) => {
         drawOpenString(ctx, string, timeRef.current)
       })
 
-      // Draw closed strings with proper mode expansions
       closedStrings.forEach((string) => {
         drawClosedString(ctx, string, timeRef.current)
       })
@@ -131,34 +135,24 @@ export function VibratingStrings({ className, density = 1 }: { className?: strin
       time: number,
     ) => {
       ctx.beginPath()
-
-      // Starting point (fixed end)
       const startX = string.x - string.length / 2
       const startY = string.y
       ctx.moveTo(startX, startY)
 
-      // Draw the string with proper mode expansion
       for (let i = 0; i <= 100; i++) {
         const x = startX + (i / 100) * string.length
-
-        // Calculate y position based on superposition of modes
-        // For open strings, we use sin(nπσ) modes to ensure fixed endpoints
         let y = string.y
-
         string.modes.forEach((mode) => {
           const normalizedPos = i / 100
           y += mode.amplitude * Math.sin(mode.n * Math.PI * normalizedPos) * Math.sin(time + mode.phase)
         })
-
         ctx.lineTo(x, y)
       }
 
-      // Style and draw the string
       ctx.strokeStyle = string.color
       ctx.lineWidth = 2
       ctx.stroke()
 
-      // Add glow effect
       ctx.shadowColor = string.color
       ctx.shadowBlur = 10
       ctx.stroke()
@@ -177,57 +171,41 @@ export function VibratingStrings({ className, density = 1 }: { className?: strin
       time: number,
     ) => {
       ctx.beginPath()
-
-      // Draw the closed string with proper mode expansion
       for (let i = 0; i <= 100; i++) {
         const angle = (i / 100) * Math.PI * 2
-
-        // Calculate radius based on superposition of modes
-        // For closed strings, we use cos(nθ) and sin(nθ) modes
         let radius = string.radius
-
         string.modes.forEach((mode) => {
           radius += mode.amplitude * Math.cos(mode.n * angle + time + mode.phase)
         })
-
         const x = string.x + Math.cos(angle) * radius
         const y = string.y + Math.sin(angle) * radius
-
         if (i === 0) {
           ctx.moveTo(x, y)
         } else {
           ctx.lineTo(x, y)
         }
       }
-
-      // Close the path for closed strings
       ctx.closePath()
-
-      // Style and draw the string
       ctx.strokeStyle = string.color
       ctx.lineWidth = 2
       ctx.stroke()
 
-      // Add glow effect
       ctx.shadowColor = string.color
       ctx.shadowBlur = 10
       ctx.stroke()
       ctx.shadowBlur = 0
     }
 
-    // Initialize
-    resizeCanvas()
-    window.addEventListener("resize", resizeCanvas)
-
-    // Start animation
     drawStrings()
 
-    // Cleanup
     return () => {
       window.removeEventListener("resize", resizeCanvas)
       cancelAnimationFrame(animationFrameRef.current)
     }
-  }, [density])
+  }, [mounted, density])
+
+  // Do not render anything until mounted to prevent hydration mismatch
+  if (!mounted) return null
 
   return (
     <div ref={containerRef} className={`absolute inset-0 overflow-hidden ${className}`}>

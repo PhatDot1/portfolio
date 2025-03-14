@@ -1,12 +1,23 @@
 "use client"
 
+import dynamic from "next/dynamic"
 import { motion } from "framer-motion"
 import { useInView } from "react-intersection-observer"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Cpu, BrainCircuit, Code, Braces, Network, Layers } from "lucide-react"
-import { VibratingStrings } from "@/components/ui/vibrating-strings"
 import { ClientOnly } from "@/components/ui/client-only"
+
+type VibratingStringsProps = {
+  className?: string
+  density?: number
+}
+
+// Extract the component from the module and provide its prop types
+const VibratingStrings = dynamic<VibratingStringsProps>(
+  () => import("@/components/ui/vibrating-strings").then((mod) => mod.VibratingStrings),
+  { ssr: false }
+)
 
 export function AboutSection() {
   const [ref, inView] = useInView({
@@ -55,20 +66,18 @@ export function AboutSection() {
             <Badge variant="outline" className="mb-4 px-4 py-1 text-blue-400 border-blue-400/30">
               About Me
             </Badge>
-            <h2 className="text-3xl md:text-5xl font-bold mb-4 text-gradient">Professional Overview</h2>
+            <h2 className="text-3xl md:text-5xl font-bold mb-4 text-gradient">
+              Professional Overview
+            </h2>
             <div className="h-1 w-20 bg-blue-500 mx-auto rounded-full"></div>
           </motion.div>
 
           <motion.div variants={itemVariants} className="mb-12">
             <p className="text-lg leading-relaxed mb-6">
-              I am a Systems Engineer with expertise in web3 technology, smart contracts, and agentic AI. With
-              a strong foundation in theoretical physics and mathematics from Imperial College London and Lancaster
-              University, I bring a unique analytical perspective to technical challenges.
+              I am a Systems Engineer with expertise in web3 technology, smart contracts, and agentic AI. With a strong foundation in theoretical physics and mathematics from Imperial College London and Lancaster University, I bring a unique analytical perspective to technical challenges.
             </p>
             <p className="text-lg leading-relaxed">
-              My work spans from developing secure NFT minters and smart contracts to building custom database tools and
-              implementing AI solutions. I'm passionate about combining mathematical principles with cutting-edge
-              technology to create innovative solutions.
+              My work spans from developing secure NFT minters and smart contracts to building custom database tools and implementing AI solutions. I'm passionate about combining mathematical principles with cutting-edge technology to create innovative solutions.
             </p>
           </motion.div>
 
@@ -162,4 +171,3 @@ export function AboutSection() {
     </section>
   )
 }
-
